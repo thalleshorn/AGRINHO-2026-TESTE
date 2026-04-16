@@ -1,0 +1,55 @@
+/* =====================================================
+ARQUIVO: style.css
+===================================================== */
+:root{
+--primary:#1b5e20;
+--secondary:#66bb6a;
+--bg:#f5f5f5;
+--text:#222;
+--radius:10px;
+--spacing:1rem;
+}
+
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--text)}
+
+/* NAVBAR */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:var(--spacing);background:var(--primary);color:#fff;position:relative}
+
+.nav-links{display:flex;gap:1rem;list-style:none}
+
+/* HAMBURGER */
+.menu-toggle{display:none;font-size:1.8rem;background:none;border:none;color:white;cursor:pointer;transition:0.3s}
+
+.menu-toggle.active{transform:rotate(90deg)}
+
+/* OVERLAY */
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:0.3s}
+
+.overlay.active{opacity:1;visibility:visible}
+
+/* MOBILE */
+@media(max-width:768px){
+.menu-toggle{display:block}
+
+.nav-links{position:fixed;top:0;right:-100%;height:100vh;width:250px;background:var(--primary);flex-direction:column;padding:2rem;transition:0.3s}
+
+.nav-links.active{right:0}
+}
+
+/* HERO */
+.hero{text-align:center;padding:3rem;background:linear-gradient(var(--primary),var(--secondary));color:white}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:1fr;gap:1rem;padding:1rem}
+
+@media(min-width:768px){
+.cards{grid-template-columns:repeat(2,1fr)}
+}
+
+.card{background:white;padding:1rem;border-radius:var(--radius)}
+
+/* GRID */
+.grid{display:grid;gap:1rem;padding:1rem}
+
+/* CARROSSEL */
+.carousel{display:flex;align-items:center;justify-content:center;gap:1rem}
